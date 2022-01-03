@@ -1,0 +1,47 @@
+[
+  {
+    "id": "pizza1",
+    "name": "Margharitta",
+    "price": 15
+  },
+  {
+    "id": "pizza2",
+    "name": "Marinara",
+    "price": 20
+  },
+  {
+    "id": "pizza3",
+    "name": "Capricciosa",
+    "price": 21
+  },
+  {
+    "id": "pizza4",
+    "name": "Diavola",
+    "price": 25
+  },
+  {
+    "id": "pizza5",
+    "name": "Frutti di Mare",
+    "price": 22
+  },
+  {
+    "id": "pizza6",
+    "name": "Mexicana",
+    "price": 21
+  },
+  {
+    "id": "pizza7",
+    "name": "Mafia",
+    "price": 19
+  },
+  {
+    "id": "pizza8",
+    "name": "Vesuvio",
+    "price": 25
+  },
+  {
+    "id": "pizza9",
+    "name": "Funghi",
+    "price": 28
+  }
+]

@@ -1,0 +1,41 @@
+POST http://localhost:3333/api/order
+content-type: application/json
+
+{
+    "total": 22,
+    "sauce": [
+        {
+            "id": "17ed2475-8e20-4f3a-be51-5a62385d49ab",
+            "count": 1
+        },
+        {
+            "id": "22917f83-3a8c-4f8a-8f53-166bc97407aa",
+            "count": 1
+        },
+        {
+            "id": "7cb5d5c9-c090-4e25-9b22-8ff26024582b",
+            "count": 1
+        }
+    ],
+    "pizza": [
+    {
+        "id": "c47630e1-8edc-43cf-a204-524dca8e47a5",
+        "ingredients": [
+            "5ce5a8e3-05e3-491d-95ab-cbdad5c56d1e",
+            "3459a53c-0515-4747-aae9-e1e79b56bb0e"
+        ]
+    },
+    {
+        "id": "a9dd11f8-3766-4edd-9f47-359fdfa39bd7",
+        "ingredients": [
+            "71208584-4ffd-49f3-a64b-866dee97d002"
+        ]
+    },
+    {
+        "id": "a9dd11f8-3766-4edd-9f47-359fdfa39bd7",
+        "ingredients": [
+            "cd4cad07-c159-4f00-bba4-f8355fccb05d"
+        ]
+    }
+]
+}

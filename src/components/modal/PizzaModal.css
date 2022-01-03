@@ -1,0 +1,16 @@
+.popup-content {
+  background: #222;
+  color: white;
+  padding: 30px;
+  border-radius: 60px;
+  border: none !important;
+  width: 70% !important;
+}
+
+@media (max-width: 500px) {
+  .popup-content {
+    width: 100% !important;
+    border-radius: 0;
+    padding-inline: 10px;
+  }
+}
