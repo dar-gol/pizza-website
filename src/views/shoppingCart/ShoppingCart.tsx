@@ -17,8 +17,12 @@ import {
 } from '../../utils/styles/global.styled'
 
 import { addRawOrder } from '../../store'
+import OrderModal from '../../components/modal/OrderModal'
+import { clearRawOrder } from '../../store/actionCreators'
 
 const ShoppingCart: React.FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch()
   const [cookies, setCookie] = useCookies(['rawOrders'])
   const pizzas = useSelector((state: any) => state.pizzas.list)
   const rawOrders = useSelector((state: any) => {
@@ -45,11 +49,11 @@ const ShoppingCart: React.FunctionComponent = () => {
   })
 
   useEffect(() => {
-    console.log({ rawOrdersCookieShop: rawOrders })
     setCookie('rawOrders', rawOrders, { path: '/' })
   }, [rawOrders])
 
   const handleOrderPizzas = () => {
+    setIsOpen(true)
     const pizzaOrder: any = []
     Object.keys(rawOrders.pizzas).forEach((id) => {
       const packetsOfIngr = rawOrders.pizzas[id].additionals.map(
@@ -59,6 +63,9 @@ const ShoppingCart: React.FunctionComponent = () => {
           return { id, ingredients: ingr }
         }
       )
+      if (packetsOfIngr.length === 0) {
+        packetsOfIngr.push({ id, ingredients: [] })
+      }
       pizzaOrder.push(...packetsOfIngr)
     })
     const body = {
@@ -75,6 +82,11 @@ const ShoppingCart: React.FunctionComponent = () => {
     })
       .then((data) => console.log(data))
       .catch((e) => console.log(e))
+  }
+
+  const clearData = (close) => {
+    dispatch(clearRawOrder())
+    close()
   }
 
   return Object.keys(rawOrders.pizzas).length ? (
@@ -102,8 +114,14 @@ const ShoppingCart: React.FunctionComponent = () => {
         </Title>
       </Col>
       <Col justifyContent="flex-end" margin="30px 0 0 0">
-        <PrimaryButton onClick={handleOrderPizzas}>Order Pizzas</PrimaryButton>
+        <PrimaryButton
+          disabled={rawOrders.sauceTotal === 0}
+          onClick={handleOrderPizzas}
+        >
+          Order Pizzas
+        </PrimaryButton>
       </Col>
+      <OrderModal isOpen={isOpen} clearData={clearData} />
     </>
   ) : (
     <Row>

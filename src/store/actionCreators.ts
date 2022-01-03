@@ -10,6 +10,7 @@ import {
   REMOVE_RAW_ORDER,
   ADD_ORDER_SAUCE,
   ADD_RAW_ORDERS,
+  CLEAR_RAW_ORDER,
 } from './actionTypes'
 
 export const getSauce = (): Get => ({
@@ -70,7 +71,6 @@ export function addRawOrder(rawOrder: RawOrderState): RawOrderAction {
 }
 
 export function addRawOrders(rawOrders: RawOrders): RawOrdersAction {
-  console.log({ rawOrders })
   const action: RawOrdersAction = {
     type: ADD_RAW_ORDERS,
     order: { ...rawOrders },
@@ -88,11 +88,25 @@ export function removeRawOrder(id: string): RawOrderAction {
   return action
 }
 
+export function clearRawOrder(): RawOrderAction {
+  const action: RawOrderAction = {
+    type: CLEAR_RAW_ORDER,
+  }
+
+  return action
+}
+
 export function addOrderSauce(
   id: string,
   changing: number,
   total: number
 ): RawOrderAction {
+  console.log({
+    type: ADD_ORDER_SAUCE,
+    id,
+    changing,
+    total,
+  })
   const action: RawOrderAction = {
     type: ADD_ORDER_SAUCE,
     id,

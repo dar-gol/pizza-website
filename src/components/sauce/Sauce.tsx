@@ -14,13 +14,13 @@ const Sauce = ({ id, name, price }: any) => {
   )
   useEffect(() => {
     const amount = rawOrdersSauce?.count || 0
-    console.log('Sauce', rawOrdersSauce)
     setValue(amount)
   }, [])
   const handleButtons = (changing) => {
     setValue((prev) => prev + changing)
     const amount = rawOrdersSauce?.count || 0
     const sum = total - amount * price + (amount + changing) * price
+    console.log({ changing, amount, sum })
     dispatch(addOrderSauce(id, changing, sum))
   }
   return (

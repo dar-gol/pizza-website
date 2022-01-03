@@ -73,7 +73,6 @@ const useAdditional = (additons): UseAdditional => {
       const removing = additionals[index]
       const temp = [...additionals]
       temp.splice(index, 1)
-      console.log(availableAmount + removing.amount)
       return {
         allCosts: allCosts - removing.costs,
         allAmount,

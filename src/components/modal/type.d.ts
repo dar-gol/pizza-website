@@ -1,5 +1,6 @@
 type OrderPizzaModal = {
   isOpen: boolean
+  clearData?: (close: any) => void
 }
 
 type PizzaModal = {

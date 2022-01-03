@@ -40,9 +40,11 @@ export const Button = css`
   & + button {
     margin-left: 10px;
   }
-  &.disabled {
+  &.disabled,
+  &:disabled {
     pointer-events: none;
     cursor: default;
+    opacity: 0.5;
   }
   &.attention:after {
     content: '!';

@@ -20,9 +20,7 @@ const App: React.FunctionComponent = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    // setCookie('orders', orders, { path: '/' })
     if (cookies.rawOrders) {
-      console.log({ cookies: cookies.rawOrders })
       dispatch(addRawOrders({ ...cookies.rawOrders }))
     }
   }, [])

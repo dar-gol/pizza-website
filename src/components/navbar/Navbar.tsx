@@ -15,7 +15,6 @@ const Navbar: React.FunctionComponent = () => {
   const orders = useSelector(
     ({ rawOrders }: { rawOrders: RawOrders }) => rawOrders.pizzas
   )
-  console.log({ orders })
   return (
     <StyledNavbar as="nav" responsive gap="20px">
       <Section>

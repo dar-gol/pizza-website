@@ -7,6 +7,7 @@ import {
   ADD_RAW_ORDERS,
   REMOVE_RAW_ORDER,
   ADD_ORDER_SAUCE,
+  CLEAR_RAW_ORDER,
 } from './actionTypes'
 
 const initialSauces: SauceState = {
@@ -122,7 +123,8 @@ export const rawOrderReducer = (
         },
       }
     case ADD_ORDER_SAUCE:
-      if (action.id && action.changing && action.total) {
+      console.log(action)
+      if (action.id && action.changing && typeof action.total !== 'undefined') {
         const saucesCopy = [...state.sauces]
         const sauceIndex = state.sauces.findIndex((el) => {
           return el.id === action.id
@@ -140,6 +142,9 @@ export const rawOrderReducer = (
       const copy: RawOrders = { ...state }
       if (action.id) delete copy.pizzas[action.id]
       return { ...copy }
+    }
+    case CLEAR_RAW_ORDER: {
+      return initialRawOrders
     }
     default:
       return state

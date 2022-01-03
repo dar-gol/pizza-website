@@ -3,20 +3,7 @@ content-type: application/json
 
 {
     "total": 22,
-    "sauce": [
-        {
-            "id": "17ed2475-8e20-4f3a-be51-5a62385d49ab",
-            "count": 1
-        },
-        {
-            "id": "22917f83-3a8c-4f8a-8f53-166bc97407aa",
-            "count": 1
-        },
-        {
-            "id": "7cb5d5c9-c090-4e25-9b22-8ff26024582b",
-            "count": 1
-        }
-    ],
+    "sauce": [],
     "pizza": [
     {
         "id": "c47630e1-8edc-43cf-a204-524dca8e47a5",
